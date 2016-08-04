@@ -1,8 +1,16 @@
 // 引入ng2路由
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import { Translate,TRANSLATE_PROVIDERS } from './pages/translate';
+import { Translate, TRANSLATE_PROVIDERS } from './pages/translate';
 import { Home } from './pages/home';
+import {
+    Provider1Component,
+    Provider2Component,
+    Provider3Component,
+    Provider4Component,
+    Provider5Component,
+    Provider6Component
+} from './pages/providers';
 
 
 /**
@@ -21,6 +29,30 @@ export const routes: RouterConfig = [
     {
         path: 'translate',
         component: Translate
+    },
+    {
+        path: 'provider1',
+        component: Provider1Component
+    },
+    {
+        path: 'provider2',
+        component: Provider2Component
+    },
+    {
+        path: 'provider3',
+        component: Provider3Component
+    },
+    {
+        path: 'provider4',
+        component: Provider4Component
+    },
+    {
+        path: 'provider5',
+        component: Provider5Component
+    },
+    {
+        path: 'provider6',
+        component: Provider6Component
     }
 ];
 

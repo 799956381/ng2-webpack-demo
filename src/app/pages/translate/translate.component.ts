@@ -42,7 +42,6 @@ export class Translate {
     }
 }
 
-
 export const TRANSLATE_PROVIDERS = [
     HTTP_PROVIDERS,
     {
