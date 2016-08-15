@@ -17,7 +17,7 @@ let template = `
 @Component({
     selector: 'provider-1',
     template: template,
-    providers: [ItemsService,{provide: Logger, useClass: Logger}]
+    providers: [ItemsService, {provide: Logger, useClass: Logger}]
 })
 export class Provider1Component {
     items: any;
@@ -92,6 +92,8 @@ export class Provider3Component {
 
 ///////////////////////////////////工厂模式/////////////////////////////////////////////////////////
 
+
+
 @Injectable()
 export class LangConfig {
     getLang() {
@@ -102,11 +104,11 @@ export class LangConfig {
 
 @Injectable()
 export class LanguageService {
-    constructor(private lang: string) {
+    constructor(private config: string) {
     }
 
     getLanguage() {
-        switch (this.lang) {
+        switch (this.config) {
             case "en":
                 return "English";
             case "zh":
@@ -137,7 +139,7 @@ export let langServiceProvider =
     providers: [LangConfig, langServiceProvider]
 })
 export class Provider4Component {
-    constructor(langService: LanguageService) {
+    constructor(config: LangConfig, langService: LanguageService) {
         console.log(langService.getLanguage());
     }
 }
@@ -154,7 +156,7 @@ export class Provider4Component {
 export class Provider5Component {
 
     constructor(@Inject(APP_CONFIG) config: AppConfig) {
-        console.log(config.title)
+        console.log(config.apiEndpoint);
     }
 }
 
